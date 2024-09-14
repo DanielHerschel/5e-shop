@@ -52,13 +52,7 @@ func (s *Server) getCurrentShopHandler(w http.ResponseWriter, r *http.Request) {
 	log.Printf("campaignName: %s", campaignName)
 
 	// TODO: search db
-	shop := domain.Shop{
-		Name: "The Small Stand",
-		Items: []domain.Item{
-			{Name: "Shorsword", Rarity: domain.Common, Gold: 5},
-		},
-	}
-	resp := domain.Campaign{Name: "Curse of Strahd", Shops: []domain.Shop{shop}, CurrentShop: shop}
+	resp := domain.Shop{}
 	// --------------------------------------------------------------------------------------------
 
 	jsonResp, err := json.Marshal(resp)
@@ -87,11 +81,7 @@ func (s *Server) getAllShopsHandler(w http.ResponseWriter, r *http.Request) {
 	log.Printf("campaignName: %s", campaignName)
 
 	// TODO: search db
-	resp := []domain.Shop{
-		{Name: "The Small Stand", Items: []domain.Item{
-			{Name: "Shortsword", Rarity: domain.Common, Gold: 5},
-		}},
-	}
+	resp := []domain.Shop{}
 	// -----------------------------------------------------
 
 	jsonResp, err := json.Marshal(resp)
