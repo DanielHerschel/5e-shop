@@ -196,15 +196,6 @@ func (s *service) GetCampaign(ctx context.Context, id primitive.ObjectID) (res d
 	return
 }
 
-func (s *service) GetCampaignCurrentShop(ctx context.Context, campaignId primitive.ObjectID) (res domain.Shop, err error) {
-	campaign, err := s.GetCampaign(ctx, campaignId)
-	if err != nil {
-		return
-	}
-	res, err = s.GetShop(ctx, campaign.ActiveShop)
-	return
-}
-
 // ----------------- Update funcs -----------------
 
 func (s *service) UpdateUser(ctx context.Context, update domain.User) (err error) {
