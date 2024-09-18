@@ -40,7 +40,6 @@ type Service interface {
 	DeleteShop(ctx context.Context, shopId primitive.ObjectID) (err error)
 
 	GetCampaignShops(ctx context.Context, campaignId primitive.ObjectID) (res []domain.Shop, err error)
-	GetCampaignCurrentShop(ctx context.Context, campaignId primitive.ObjectID) (res domain.Shop, err error)
 
 	CreateCampaign(ctx context.Context, campaign domain.Campaign) (err error)
 	GetCampaign(ctx context.Context, id primitive.ObjectID) (res domain.Campaign, err error)
