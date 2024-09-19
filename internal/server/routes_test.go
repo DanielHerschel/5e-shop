@@ -9,7 +9,7 @@ import (
 
 func TestHandler(t *testing.T) {
 	s := &Server{}
-	server := httptest.NewServer(http.HandlerFunc(s.getAllShopsHandler))
+	server := httptest.NewServer(http.HandlerFunc(s.getCurrentShopHandler))
 	defer server.Close()
 	resp, err := http.Get(server.URL)
 	if err != nil {
